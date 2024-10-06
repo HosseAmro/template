@@ -1,0 +1,35 @@
+// ____________________________________________ CLASSNAME ____________________________________________ //
+
+.animate-flash {
+	animation: flash 1s ease infinite;
+}
+
+.animate-holder {
+	background-color: transparent;
+	background-size: 500% !important;
+	animation: holder 1.5s infinite !important;
+}
+
+// ____________________________________________ KEYFRAMES ____________________________________________ //
+@keyframes flash {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes holder {
+	0% {
+		opacity: 0;
+		background-position: 0 0;
+	}
+	100% {
+		opacity: 1;
+		background-position: 100% 100%;
+	}
+}

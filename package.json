@@ -1,0 +1,33 @@
+{
+	"name": "template",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"lint": "next lint",
+		"start": "next start",
+		"build": "next build",
+		"export": "next export",
+		"i-legacy": "npm i --legacy-peer-deps",
+		"git-clear-cache": "git rm --cached . -r",
+		"pretty": "prettier --write \"./*/.{js,jsx,ts,tsx}\""
+	},
+	"dependencies": {
+		"next": "^14.2.5",
+		"nprogress": "^0.2.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"sass": "^1.77.8"
+	},
+	"devDependencies": {
+		"@types/node": "^20.14.14",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"autoprefixer": "^10.4.20",
+		"eslint": "^8.57.0",
+		"postcss": "^8.4.41",
+		"prettier": "^3.3.3",
+		"tailwindcss": "^3.4.8",
+		"typescript": "^5.6.2"
+	},
+	"author": "Hosse"
+}

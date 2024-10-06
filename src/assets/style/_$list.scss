@@ -1,0 +1,14 @@
+// ______________________________ colors list ______________________________ //
+$color-list: (
+	// _____________________* basic main colors *_____________________ //
+	'black': var(--color-black),
+	'white': var(--color-white),
+	'nprogress-color': var(--color-nprogress)
+);
+
+$color-list-rgb: (
+	// _____________________* basic main colors *_____________________ //
+	'black': var(--color-black-rgb),
+	'white': var(--color-white-rgb),
+	'nprogress-color': var(--nprogress-color-rgb)
+);
