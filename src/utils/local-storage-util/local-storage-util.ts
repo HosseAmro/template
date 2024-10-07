@@ -27,7 +27,7 @@ export const localStorageUtil = {
 		return localStorage.removeItem(name);
 	},
 
-	storageListener: (addListenerCb: (e: StorageEvent) => any) => {
+	storageListener: (addListenerCb: (e: StorageEvent) => unknown) => {
 		window.addEventListener('storage', addListenerCb);
 
 		const removeListener = () => window.removeEventListener('storage', addListenerCb);

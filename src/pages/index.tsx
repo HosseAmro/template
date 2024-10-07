@@ -1,12 +1,12 @@
-import { localStorageUtil } from '@utils';
+import { cookieUtil } from '@utils';
 
 export const Home = () => {
-	//  localStorage.clear()
-	// console.log(localStorageUtil.getAll());
+	let test = cookieUtil.getAllCookies();
+	console.log(test);
 
 	return (
 		<>
-			<div>Test localStorage</div>
+			<div>Test cookieUtil getAllCookies</div>
 		</>
 	);
 };

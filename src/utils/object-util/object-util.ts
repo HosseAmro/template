@@ -18,7 +18,7 @@ export const objectUtil = {
 			keys = scope.split('.');
 		}
 
-		const update = (obj: any, keys: string[], value: any, start: boolean = false): any => {
+		const update = (obj: unknown, keys: string[], value: unknown, start: boolean = false) => {
 			if (keys.length === 0) return value;
 
 			const [firstKey, ...restKeys] = keys;
