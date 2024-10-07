@@ -1,27 +1,28 @@
 export const cookieUtil = {
-	getAllCookies: (): { name: string; value: string | object }[] => {
+	getAllCookies: (): { name: string; value: unknown }[] => {
 		const cookies = (document.cookie || '').split(';') || [];
 
 		const allCookies = cookies.map((str) => {
 			const [name, value] = str.split('=');
-			let obj: unknown;
+			let fixedName: string = name;
+			let fixedValue: unknown = value;
+
 			try {
-				obj = JSON.parse(decodeURIComponent(value || ''));
+				fixedName = decodeURIComponent(name || '');
 			} catch (error) {}
 
-			if (obj && typeof obj === 'object') {
-				try {
-					return { name: decodeURIComponent(name || ''), value: obj };
-				} catch (error) {
-					return { name: name || '', value: obj };
-				}
-			} else {
-				try {
-					return { name: decodeURIComponent(name || ''), value: decodeURIComponent(value || '') };
-				} catch (error) {
-					return { name: name || '', value: value || '' };
-				}
-			}
+			try {
+				fixedValue = decodeURIComponent(value || '');
+			} catch (e) {}
+
+			try {
+				if (typeof fixedValue === 'string') fixedValue = JSON.parse(value || '');
+			} catch (e) {}
+
+			return {
+				name: fixedName || '',
+				value: fixedValue || '',
+			};
 		});
 		return allCookies;
 	},
