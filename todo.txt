@@ -3,21 +3,21 @@ Package for solar calendar => jalali-moment
 Package for backend connection => axios
 Package for ofline and cache => ServiceWorker
 
-Utils {
-    //ObjectUtil : toArray
-    //LocalStorageUtil
-    //RegexUtil
+UTILs {
+    //ObjectUTIL : toArray
+    //LocalStorageUTIL
+    //RegexUTIL
     
-    FileUtil
-    CookieUtil
+    FileUTIL
+    CookieUTIL
 
-    #ArrayUtil
-    #NumberUtil
-    #StringUtil
-    #DateUtil
-    #MathUtil
-    #UrlUtil 
-    #ErrorUtil 
+    #ArrayUTIL
+    #NumberUTIL
+    #StringUTIL
+    #DateUTIL
+    #MathUTIL
+    #UrlUTIL 
+    #ErrorUTIL 
 };
 
 hooks{

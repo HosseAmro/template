@@ -1,4 +1,4 @@
-export const localStorageUtil = {
+export const LocalStorageUTIL = {
 	setItem: <T>(name: Not_Empty_Str<T>, value: unknown) => {
 		try {
 			if (!name || typeof name !== 'string') return;

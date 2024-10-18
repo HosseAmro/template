@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { objectUtil } from '@utils';
+import { ObjectUTIL } from '@utils';
 
 export const createContext: <T>(initState: T) => {
 	Provider: ({ children }) => React.JSX.Element;
@@ -37,7 +37,7 @@ export const createContext: <T>(initState: T) => {
 			payload: Deep_Partial<Part_Type<Deep_Required<T>, P>>,
 		) => {
 			setState((oldState) => {
-				return objectUtil.overWrite(oldState, scope, payload);
+				return ObjectUTIL.overWrite(oldState, scope, payload);
 			});
 		};
 		return { overWrite, setState, initState, state };

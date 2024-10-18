@@ -1,4 +1,4 @@
-export const objectUtil = {
+export const ObjectUTIL = {
 	overWrite: <T, P extends Paths<Deep_Required<T>> | null>(
 		//
 		state: T,

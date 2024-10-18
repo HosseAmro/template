@@ -1,4 +1,4 @@
-export const cookieUtil = {
+export const CookieUTIL = {
 	getAllCookies: (): { name: string; value: unknown }[] => {
 		const cookies = (document.cookie || '').split(';') || [];
 
