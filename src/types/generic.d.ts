@@ -1,4 +1,4 @@
-//-------------------------------- Deep_Partial --------------------------------//
+//------------------------------ Deep Partial ------------------------------//
 type Deep_Partial<T> =
 	//
 	T extends Array<infer U> // is Array
@@ -9,7 +9,7 @@ type Deep_Partial<T> =
 				}
 			: T;
 
-//------------------------------ Deep_Required --------------------------------//
+//------------------------------ Deep Required ------------------------------//
 type Deep_Required<T> =
 	//
 	T extends Array<infer U> // is Array
@@ -20,10 +20,10 @@ type Deep_Required<T> =
 				}
 			: T;
 
-//------------------------------ Not_Empty_Str --------------------------------//
+//------------------------------ Not Empty Str ------------------------------//
 type Not_Empty_Str<T> = T extends '' ? never : T extends string ? T : never;
 
-//-------------------------------- Part_Type --------------------------------//
+//------------------------------ Part Type ------------------------------//
 type Part_Type<T, P extends Paths<Deep_Required<Init_State>> | null> =
 	//
 	P extends null // Return T
@@ -36,7 +36,7 @@ type Part_Type<T, P extends Paths<Deep_Required<Init_State>> | null> =
 				? T[P] // Return Part
 				: never;
 
-//------------------------------ Paths --------------------------------//
+//------------------------------ Paths ------------------------------//
 type Paths<T> =
 	//
 	T extends Array<infer A> // is Array
@@ -51,7 +51,5 @@ type Paths<T> =
 				}[keyof T] // Return all keys
 			: never;
 
-//------------------------------ Paths --------------------------------//
-type Prettify<T> = {
-	[K in keyof T]: T[K];
-};
+//------------------------------ Prettify ------------------------------//
+type Prettify<T> = { [K in keyof T]: T[K] };

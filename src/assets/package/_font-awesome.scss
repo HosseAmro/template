@@ -1,4 +1,5 @@
-//-------------------------------- :host & :root --------------------------------//
+//------------------------------ :host & :root ------------------------------//
+
 :host,
 :root {
 	--fa-style-family-classic: 'Font Awesome 6';
@@ -17,7 +18,9 @@
 	--fa-font-sharp-solid: normal 900 1em/1 'Font Awesome 6 Sharp';
 	--fa-style-family-sharp-duotone: 'Font Awesome 6 Sharp Duotone';
 	--fa-font-sharp-duotone-solid: normal 900 1em/1 'Font Awesome 6 Sharp Duotone';
-	//-------------------------------- rest --------------------------------//
+
+	//------------------------------ rest ------------------------------//
+
 	// --fa-style-family: ;
 	// --fa-style: ;
 	// --fa-display: ;
@@ -58,7 +61,9 @@
 	// --fa-border-padding: ;
 	// --fa-pull-margin: ;
 }
-//-------------------------------- @font-face --------------------------------//
+
+//------------------------------ @font-face ------------------------------//
+
 @font-face {
 	font-family: 'Font Awesome 6';
 	font-style: normal;
@@ -228,7 +233,9 @@
 		u+f0d6, u+f0e4, u+f0ec, u+f10a-f10b, u+f123, u+f13e, u+f148-f149, u+f14c, u+f156, u+f15e, u+f160-f161, u+f163, u+f175-f178,
 		u+f195, u+f1f8, u+f219, u+f27a;
 }
-//-------------------------------- font-weight & font-family  --------------------------------//
+
+//------------------------------ font-weight & font-family  ------------------------------//
+
 .fa {
 	font-family: var(--fa-style-family, 'Font Awesome 6');
 	font-weight: var(--fa-style, 900);
@@ -316,7 +323,9 @@
 	font-family: 'Font Awesome 6 Sharp Duotone';
 	font-weight: 900;
 }
-//-------------------------------- fa-duotone  --------------------------------//
+
+//------------------------------ fa-duotone  ------------------------------//
+
 .fa-duotone,
 .fad {
 	position: relative;
@@ -357,7 +366,9 @@
 .fad.fa-stack-2x {
 	position: absolute;
 }
-//-------------------------------- fa-sharp-duotone  --------------------------------//
+
+//------------------------------ fa-sharp-duotone  ------------------------------//
+
 .fa-sharp-duotone,
 .fa-sharp-duotone.fa-solid,
 .fasds {
@@ -407,7 +418,9 @@
 .fasds.fa-stack-2x {
 	position: absolute;
 }
-//-------------------------------- font-size --------------------------------//
+
+//------------------------------ font-size ------------------------------//
+
 .fa-1x {
 	font-size: 1em;
 }
@@ -468,7 +481,9 @@
 	line-height: 0.03125em;
 	vertical-align: -0.1875em;
 }
-//-------------------------------- animation --------------------------------//
+
+//------------------------------ animation ------------------------------//
+
 .fa-beat {
 	animation-name: fa-beat;
 	animation-delay: var(--fa-animation-delay, 0s);
@@ -554,7 +569,9 @@
 		transition-duration: 0s;
 	}
 }
-//-------------------------------- @keyframes --------------------------------//
+
+//------------------------------ @keyframes ------------------------------//
+
 @keyframes fa-beat {
 	0%,
 	90% {
@@ -649,7 +666,9 @@
 		transform: rotate(1turn);
 	}
 }
-//-------------------------------- rotate & flip --------------------------------//
+
+//------------------------------ rotate & flip ------------------------------//
+
 .fa-rotate-90 {
 	transform: rotate(90deg);
 }
@@ -672,7 +691,9 @@
 .fa-rotate-by {
 	transform: rotate(var(--fa-rotate-angle, 0));
 }
-//-------------------------------- fa-stack --------------------------------//
+
+//------------------------------ fa-stack ------------------------------//
+
 .fa-stack {
 	display: inline-block;
 	height: 2em;
@@ -695,7 +716,9 @@
 .fa-stack-2x {
 	font-size: 2em;
 }
-//-------------------------------- rest --------------------------------//
+
+//------------------------------ rest ------------------------------//
+
 .fa-fw {
 	text-align: center;
 	width: 1.25em;
@@ -745,7 +768,9 @@
 	white-space: nowrap;
 	border-width: 0;
 }
-//-------------------------------- classic  --------------------------------//
+
+//------------------------------ classic  ------------------------------//
+
 .fa-0:before {
 	content: '\30';
 }
@@ -11658,7 +11683,9 @@
 .fa-turn-up:before {
 	content: '\f3bf';
 }
-//-------------------------------- brand  --------------------------------//
+
+//------------------------------ brand  ------------------------------//
+
 .fa-monero:before {
 	content: '\f3d0';
 }
@@ -13170,7 +13197,9 @@
 .fa-steam-symbol:before {
 	content: '\f3f6';
 }
-//-------------------------------- duotone  --------------------------------//
+
+//------------------------------ duotone  ------------------------------//
+
 .fa-duotone.fa-0:after,
 .fad.fa-0:after {
 	content: '\30\30';
@@ -28377,7 +28406,9 @@
 .fad.fa-turn-up:after {
 	content: '\f3bf\f3bf';
 }
-//-------------------------------- sharp-duotone  --------------------------------//
+
+//------------------------------ sharp-duotone  ------------------------------//
+
 .fa-sharp-duotone.fa-0:after,
 .fasds.fa-0:after {
 	content: '\30\30';

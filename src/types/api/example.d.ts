@@ -1,3 +1,3 @@
 declare type Example = {
-	[key: string]: unknown;
+	[key: string | number | symbol]: unknown;
 };

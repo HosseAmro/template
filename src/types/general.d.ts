@@ -1,12 +1,12 @@
-//-------------------------------- Action_Callbacks --------------------------------//
-declare type Action_Callbacks = {
+//------------------------------ Action Callbacks ------------------------------//
+declare type Action_Callbacks<T> = {
 	statusChangeCB?: (status: Service_Status) => unknown;
-	failCB?: (res?: unknown) => unknown;
-	okCB?: (res?: unknown) => unknown;
+	failCB?: (res?: T) => unknown;
+	okCB?: (res?: T) => unknown;
 };
 
-//-------------------------------- Any_Object --------------------------------//
+//------------------------------ Any Object ------------------------------//
 type Any_Object = { [key: string | number | symbol]: unknown };
 
-//-------------------------------- Service_Status --------------------------------//
+//------------------------------ Service Status ------------------------------//
 declare type Service_Status = 'initial' | 'loading' | 'failure' | 'success';

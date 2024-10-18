@@ -1,16 +1,14 @@
-//------------------ Internal Packages ------------------//
+//------------------------------ Internal Packages ------------------------------//
 import type { AppProps } from 'next/app';
 import { Router } from 'next/router';
 
-//------------------ External Packages ------------------//
+//------------------------------ External Packages ------------------------------//
 import nprogress from 'nprogress';
 
-//------------------ Componnents ------------------//
-
+//------------------------------ Componnents ------------------------------//
 import { AppTemplate } from '@template';
 
-//------------------ Styles ------------------//
-
+//------------------------------ Styles ------------------------------//
 import '@assets/package/app.scss';
 import '@assets/style/app.scss';
 
