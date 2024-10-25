@@ -6,9 +6,9 @@ export const createContext: <T>(initState: T) => {
 	Provider: ({ children }) => React.JSX.Element;
 
 	useContext: () => {
-		overWrite: <P extends Paths<Deep_Required<T>> | null>( //
+		overWrite: <P extends Paths<T> | null>( //
 			scope: P,
-			payload: Deep_Partial<Part_Type<Deep_Required<T>, P>>,
+			payload: Deep_Partial<Part_Type<T, P>>,
 		) => void;
 		setState: React.Dispatch<React.SetStateAction<T>>;
 		initState: T;
@@ -32,9 +32,9 @@ export const createContext: <T>(initState: T) => {
 
 	const useContext = () => {
 		const { setState, state } = React.useContext(context);
-		const overWrite = <P extends Paths<Deep_Required<T>> | null>( //
+		const overWrite = <P extends Paths<T> | null>( //
 			scope: P,
-			payload: Deep_Partial<Part_Type<Deep_Required<T>, P>>,
+			payload: Deep_Partial<Part_Type<T, P>>,
 		) => {
 			setState((oldState) => {
 				return ObjectUTIL.overWrite(oldState, scope, payload);

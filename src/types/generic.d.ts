@@ -24,7 +24,7 @@ type Deep_Required<T> =
 type Not_Empty_Str<T> = T extends '' ? never : T extends string ? T : never;
 
 //------------------------------ Part Type ------------------------------//
-type Part_Type<T, P extends Paths<Deep_Required<Init_State>> | null> =
+type Part_Type<I, P extends Paths<I> | null, T = Deep_Required<I>> =
 	//
 	P extends null // Return T
 		? T
@@ -37,7 +37,7 @@ type Part_Type<T, P extends Paths<Deep_Required<Init_State>> | null> =
 				: never;
 
 //------------------------------ Paths ------------------------------//
-type Paths<T> =
+type Paths<I, T = Deep_Required<I>> =
 	//
 	T extends Array<infer A> // is Array
 		? never

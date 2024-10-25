@@ -1,9 +1,9 @@
 export const ObjectUTIL = {
-	overWrite: <T, P extends Paths<Deep_Required<T>> | null>(
+	overWrite: <T, P extends Paths<T> | null>(
 		//
 		state: T,
 		scope: P,
-		payload: Deep_Partial<Part_Type<Deep_Required<T>, P>>,
+		payload: Deep_Partial<Part_Type<T, P>>,
 	): T => {
 		if (scope === null) {
 			return {
