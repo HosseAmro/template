@@ -1,4 +1,8 @@
 export const ObjectUTIL = {
+	map: <T extends Any_Object, R>(object: T, cb: <K extends keyof T>(key: K, value: T[K], index: number) => R) => {
+		return (Object.keys(object) as (keyof T)[]).map((key, index) => cb(key, object[key], index));
+	},
+
 	overWrite: <T, P extends Paths<T> | null>(
 		//
 		state: T,
@@ -45,5 +49,20 @@ export const ObjectUTIL = {
 		};
 
 		return update(state, keys, payload, true);
+	},
+
+	toArray<T extends Any_Object, K extends string = 'key', V extends string = 'value'>(
+		object: T,
+		nameForKey?: Not_Empty_Str<K>,
+		nameForValue?: Not_Empty_Str<V>,
+	) {
+		const keyName = nameForKey || 'key';
+		const valueName = nameForValue || 'value';
+
+		// TODO : Specif keys in the type object[] output
+
+		return ObjectUTIL.map(object, (key, item, i) => {
+			return { [keyName]: key, [valueName]: item };
+		});
 	},
 } as const;
