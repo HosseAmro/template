@@ -1,6 +1,8 @@
 export const ObjectUTIL = {
-	map: <T extends Any_Object, R>(object: T, cb: <K extends keyof T>(key: K, value: T[K], index: number) => R) => {
-		return (Object.keys(object) as (keyof T)[]).map((key, index) => cb(key, object[key], index));
+	map: <T extends Any_Object, K extends keyof T, R>(object: T, cb: (key: keyof T, value: T[K], index: number) => R) => {
+		return (Object.entries(object) as [keyof T, T[K]][]).map(([key, value], index) => {
+			return cb(key, value, index);
+		});
 	},
 
 	overWrite: <T, P extends Paths<T> | null>(
@@ -51,18 +53,22 @@ export const ObjectUTIL = {
 		return update(state, keys, payload, true);
 	},
 
-	toArray<T extends Any_Object, K extends string = 'key', V extends string = 'value'>(
+	toArray: <T extends Any_Object, K extends string = 'key', V extends string = 'value'>(
 		object: T,
 		nameForKey?: Not_Empty_Str<K>,
 		nameForValue?: Not_Empty_Str<V>,
-	) {
-		const keyName = nameForKey || 'key';
-		const valueName = nameForValue || 'value';
+	) => {
+		const keyName = (nameForKey || 'key') as K;
+		const valueName = (nameForValue || 'value') as V;
 
-		// TODO : Specif keys in the type object[] output
+		type Output<T, K extends string, V extends string> = {
+			[P in K]: string | number | symbol;
+		} & {
+			[Q in V]: unknown;
+		};
 
-		return ObjectUTIL.map(object, (key, item, i) => {
-			return { [keyName]: key, [valueName]: item };
-		});
+		return Object.entries(object).map(([key, value]) => {
+			return { [keyName]: key, [valueName]: value };
+		}) as Output<T, K, V>[];
 	},
 } as const;
