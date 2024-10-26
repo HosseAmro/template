@@ -58,17 +58,19 @@ export const ObjectUTIL = {
 		nameForKey?: Not_Empty_Str<K>,
 		nameForValue?: Not_Empty_Str<V>,
 	) => {
+		if (object === undefined || object === null) return;
+
 		const keyName = (nameForKey || 'key') as K;
 		const valueName = (nameForValue || 'value') as V;
 
-		type Output<T, K extends string, V extends string> = {
-			[P in K]: string | number | symbol;
+		type Output<T, K extends string, V extends string, A extends keyof T> = {
+			[P in K]: A;
 		} & {
-			[Q in V]: unknown;
+			[Q in V]: T[A];
 		};
 
-		return Object.entries(object).map(([key, value]) => {
-			return { [keyName]: key, [valueName]: value };
-		}) as Output<T, K, V>[];
+		return ObjectUTIL.map(object, (key, value) => {
+			return { [keyName]: key, [valueName]: value } as Output<T, K, V, typeof key>;
+		});
 	},
 } as const;
