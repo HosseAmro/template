@@ -1,4 +1,5 @@
 export const LocalStorageUTIL = {
+	//------------------------------ setItem ------------------------------//
 	setItem: <T>(name: Not_Empty_Str<T>, value: unknown) => {
 		try {
 			if (!name || typeof name !== 'string') return;
@@ -7,6 +8,7 @@ export const LocalStorageUTIL = {
 		} catch (error) {}
 	},
 
+	//------------------------------ getItem ------------------------------//
 	getItem: <T>(name: Not_Empty_Str<T>): unknown => {
 		try {
 			if (!name) return null;
@@ -18,15 +20,18 @@ export const LocalStorageUTIL = {
 		} catch (err) {}
 	},
 
+	//------------------------------ getAll ------------------------------//
 	getAll: (): Storage => {
 		return { ...localStorage };
 	},
 
+	//------------------------------ deleteItem ------------------------------//
 	deleteItem: <T>(name: Not_Empty_Str<T>) => {
 		if (!name) return;
 		return localStorage.removeItem(name);
 	},
 
+	//------------------------------ storageListener ------------------------------//
 	storageListener: (addListenerCb: (e: StorageEvent) => unknown) => {
 		window.addEventListener('storage', addListenerCb);
 
@@ -35,6 +40,7 @@ export const LocalStorageUTIL = {
 		return { removeListener };
 	},
 
+	//------------------------------ logout ------------------------------//
 	logout: <T>(redirectTo?: Not_Empty_Str<T>) => {
 		localStorage.removeItem('token');
 		if (redirectTo && typeof redirectTo === 'string') {

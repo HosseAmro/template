@@ -4,20 +4,20 @@ Package for backend connection => axios
 Package for ofline and cache => ServiceWorker
 
 UTILs {
-    //ObjectUTIL : toArray
-    //LocalStorageUTIL
-    //RegexUTIL
-    
-    FileUTIL
-    CookieUTIL
+    ObjectUTIL 
+    RegexUTIL
 
+    //LocalStorageUTIL
+    //CookieUTIL
+    //ErrorUTIL 
+    
+    #FileUTIL
     #ArrayUTIL
     #NumberUTIL
     #StringUTIL
     #DateUTIL
     #MathUTIL
     #UrlUTIL 
-    #ErrorUTIL 
 };
 
 hooks{
