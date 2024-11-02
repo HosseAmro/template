@@ -2,9 +2,12 @@ export const ObjectUTIL = {
 	//------------------------------ map ------------------------------//
 	map: <T extends Any_Object, K extends keyof T, R>(
 		//
-		object: T,
+		obj: T,
 		cb: (key: keyof T, value: T[K], index: number) => R,
 	) => {
+		let object = obj;
+		if (!object || typeof object !== 'object') object = {} as T;
+
 		return (Object.entries(object) as [keyof T, T[K]][]).map(([key, value], index) => {
 			return cb(key, value, index);
 		});
@@ -17,7 +20,11 @@ export const ObjectUTIL = {
 		scope: P,
 		payload: Deep_Partial<Part_Type<T, P>>,
 	): T => {
+		if (!state || typeof state !== 'object') return {} as T;
+
 		if (scope === null) {
+			if (!payload || typeof payload !== 'object') return state;
+
 			return {
 				...state,
 				...payload,
@@ -54,8 +61,6 @@ export const ObjectUTIL = {
 		nameForKey?: Not_Empty_Str<Key>,
 		nameForValue?: Not_Empty_Str<Value>,
 	) => {
-		if (!object || typeof object !== 'object') return;
-
 		const keyName = (nameForKey || 'key') as Key;
 		const valueName = (nameForValue || 'value') as Value;
 

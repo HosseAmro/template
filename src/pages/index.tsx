@@ -1,12 +1,9 @@
-import { CookieUTIL} from '@utils';
+import { ObjectUTIL } from '@utils';
 
 export const Home = () => {
-	let test = CookieUTIL.getAllCookies();
-	console.log(test);
-
 	return (
 		<>
-			<div>Test CookieUTIL.getAllCookies</div>
+			<div>Test ObjectUTIL</div>
 		</>
 	);
 };
