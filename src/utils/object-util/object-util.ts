@@ -38,16 +38,9 @@ export const ObjectUTIL = {
 
 			const [firstKey, ...restKeys] = keys;
 
-			if (obj[firstKey] === undefined) {
-				return {
-					...obj,
-					[firstKey]: update({}, restKeys, value),
-				};
-			}
-
 			return {
 				...obj,
-				[firstKey]: update(obj[firstKey], restKeys, value),
+				[firstKey]: update(obj[firstKey] || {}, restKeys, value),
 			};
 		};
 
